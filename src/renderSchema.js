@@ -17,7 +17,7 @@ function renderType(type, options) {
     return `[${renderType(type.ofType, options)}]`
   }
   const url = options.getTypeURL(type)
-  return url ? `<a href="${url}">${type.name}</a>` : type.name
+  return url ? `<a href="/#/graphql?id=${url.slice(1)}">${type.name}</a>` : type.name
 }
 
 function renderObject(type, options) {
