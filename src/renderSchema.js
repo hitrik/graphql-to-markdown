@@ -40,11 +40,11 @@ function renderObject(type, options) {
   if (isInputObject) {
     printer('<th colspan="2" align="left">Field</th>')
   } else {
-    printer('<th align="left">Field</th>')
-    printer('<th align="right">Argument</th>')
+    printer('<th align="left">Поле</th>')
+    printer('<th align="right">Аргумент</th>')
   }
-  printer('<th align="left">Type</th>')
-  printer('<th align="left">Description</th>')
+  printer('<th align="left">Тип</th>')
+  printer('<th align="left">Описание</th>')
   printer('</tr>')
   printer('</thead>')
   printer('<tbody>')
@@ -79,8 +79,8 @@ function renderObject(type, options) {
     if (!isInputObject && field.args.length) {
       field.args.forEach((arg, i) => {
         printer('<tr>')
-        printer(`<td colspan="2" align="right" valign="top">${arg.name}</td>`)
-        printer(`<td valign="top">${renderType(arg.type, { getTypeURL })}</td>`)
+        printer(`<td colspan="2" align="right" valign="middle">${arg.name}</td>`)
+        printer(`<td valign="middle">${renderType(arg.type, { getTypeURL })}</td>`)
         if (arg.description) {
           printer('<td>')
           printer(`\n${arg.description}\n`)
@@ -98,7 +98,7 @@ function renderObject(type, options) {
 
 function renderSchema(schema, options) {
   options = options || {}
-  const title = options.title || 'Schema Types'
+  const title = options.title || 'Типы для gtaphql-схем'
   const skipTitle = options.skipTitle || false
   const skipTableOfContents = options.skipTableOfContents || false
   const prologue = options.prologue || ''
@@ -158,7 +158,7 @@ function renderSchema(schema, options) {
 
   if (!skipTableOfContents) {
     printer('<details>')
-    printer('  <summary><strong>Table of Contents</strong></summary>\n')
+    printer('  <summary><strong>Список типов</strong></summary>\n')
     if (query) {
       printer('  * [Query](#query)')
     }
@@ -250,8 +250,8 @@ function renderSchema(schema, options) {
       }
       printer('<table>')
       printer('<thead>')
-      printer('<th align="left">Value</th>')
-      printer('<th align="left">Description</th>')
+      printer('<th align="left">Значение</th>')
+      printer('<th align="left">Описание</th>')
       printer('</thead>')
       printer('<tbody>')
       type.enumValues.forEach((value) => {
@@ -311,8 +311,8 @@ function renderSchema(schema, options) {
       }
       printer('<table>')
       printer('<thead>')
-      printer('<th align="left">Type</th>')
-      printer('<th align="left">Description</th>')
+      printer('<th align="left">Тип</th>')
+      printer('<th align="left">Описание</th>')
       printer('</thead>')
       printer('<tbody>')
       type.possibleTypes.forEach((objType) => {
@@ -325,7 +325,7 @@ function renderSchema(schema, options) {
           })}</strong></td>`
         )
         if (desc) {
-          printer(`<td valign="top">${desc}</td>`)
+          printer(`<td valign="middle">${desc}</td>`)
         } else {
           printer('<td></td>')
         }
