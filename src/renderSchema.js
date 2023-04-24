@@ -53,11 +53,11 @@ function renderObject(type, options) {
   fields.forEach((field) => {
     printer('<tr>')
     printer(
-      `<td colspan="2" valign="top"><strong>${field.name}</strong>${
+      `<td colspan="2" valign="middle"><strong>${field.name}</strong>${
         field.isDeprecated ? ' ⚠️' : ''
       }</td>`
     )
-    printer(`<td valign="top">${renderType(field.type, { getTypeURL })}</td>`)
+    printer(`<td valign="middle">${renderType(field.type, { getTypeURL })}</td>`)
     if (field.description || field.isDeprecated) {
       printer('<td>')
       if (field.description) {
@@ -257,7 +257,7 @@ function renderSchema(schema, options) {
       type.enumValues.forEach((value) => {
         printer('<tr>')
         printer(
-          `<td valign="top"><strong>${value.name}</strong>${
+          `<td valign="middle"><strong>${value.name}</strong>${
             value.isDeprecated ? ' ⚠️' : ''
           }</td>`
         )
@@ -320,7 +320,7 @@ function renderSchema(schema, options) {
         const desc = objType.description || (obj && obj.description)
         printer('<tr>')
         printer(
-          `<td valign="top"><strong>${renderType(objType, {
+          `<td valign="middle"><strong>${renderType(objType, {
             getTypeURL,
           })}</strong></td>`
         )
