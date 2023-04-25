@@ -38,7 +38,7 @@ function renderObject(type, options) {
   printer('<thead>')
   printer('<tr>')
   if (isInputObject) {
-    printer('<th colspan="2" align="left">Field</th>')
+    printer('<th colspan="2" align="left">Поле</th>')
   } else {
     printer('<th align="left">Поле</th>')
     printer('<th align="right">Аргумент</th>')
